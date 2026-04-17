@@ -1,3 +1,12 @@
+// ── 이미지 import (파일명을 바꾸고 싶으면 아래만 수정하세요) ──
+import imgPlumExtract  from '../assets/pictures/썸네일2.png'
+import imgPlumVinegar  from '../assets/pictures/썸네일5.png'
+import imgWaterJelly   from '../assets/pictures/워터젤리 상품사진1.png'
+import imgGiftSet1     from '../assets/pictures/분할1.png'
+import imgGiftSet2     from '../assets/pictures/분할2.png'
+
+// 사용 가능한 나머지 이미지: 분할3.png ~ 분할10.png
+
 export const shopInfo = {
   name: '에녹의정원',
   owner: '문미경',
@@ -21,8 +30,7 @@ export const products = [
     tag: '베스트',
     tagColor: 'bg-orange-400',
     emoji: '🍶',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559181567-c3190bba5aef?w=600&q=80',
+    imageUrl: imgPlumExtract,
   },
   {
     id: 2,
@@ -34,8 +42,7 @@ export const products = [
     tag: '유기농',
     tagColor: 'bg-green-600',
     emoji: '🫙',
-    imageUrl:
-      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80',
+    imageUrl: imgPlumVinegar,
   },
   {
     id: 3,
@@ -47,8 +54,7 @@ export const products = [
     tag: 'HACCP 인증',
     tagColor: 'bg-green-500',
     emoji: '🧃',
-    imageUrl:
-      'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80',
+    imageUrl: imgWaterJelly,
   },
   {
     id: 4,
@@ -60,8 +66,7 @@ export const products = [
     tag: '선물 추천',
     tagColor: 'bg-amber-500',
     emoji: '🎁',
-    imageUrl:
-      'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80',
+    imageUrl: imgGiftSet1,
   },
   {
     id: 5,
@@ -73,7 +78,6 @@ export const products = [
     tag: '프리미엄',
     tagColor: 'bg-orange-500',
     emoji: '🎀',
-    imageUrl:
-      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&q=80',
+    imageUrl: imgGiftSet2,
   },
 ]
