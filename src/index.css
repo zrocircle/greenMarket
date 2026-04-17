@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-green-900 bg-white antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-green-600 hover:bg-green-700
+           text-white font-semibold rounded-full shadow-lg hover:shadow-xl
+           transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border-2 border-green-600
+           text-green-700 hover:bg-green-600 hover:text-white font-semibold
+           rounded-full transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-green-800 flex items-center gap-2;
+  }
+}
+
+/* 히어로 배경 패턴 */
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(74, 222, 128, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(253, 186, 116, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(34, 197, 94, 0.10) 0%, transparent 40%);
+}
+
+/* 커스텀 스크롤바 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-green-50; }
+::-webkit-scrollbar-thumb { @apply bg-green-400 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-green-600; }
