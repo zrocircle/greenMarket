@@ -1,4 +1,4 @@
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, onInquiry }) {
   const { name, description, price, unit, tag, tagColor, emoji, imageUrl } = product
 
   const formatted = price != null ? price.toLocaleString('ko-KR') : null
@@ -62,7 +62,10 @@ export default function ProductCard({ product }) {
           </div>
 
           {/* 문의 버튼 */}
-          <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full shadow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0">
+          <button
+            onClick={() => onInquiry(product)}
+            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full shadow transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+          >
             구매 문의
           </button>
         </div>

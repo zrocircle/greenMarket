@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import ShopProfile from '../components/ShopProfile'
 import ProductCard from '../components/ProductCard'
-import { products } from '../data/shopData'
+import PurchaseModal from '../components/PurchaseModal'
+import { products, shopInfo } from '../data/shopData'
 
 export default function Shop() {
+  const [selected, setSelected] = useState(null)
+
   return (
     <div className="bg-gradient-to-b from-green-50/60 to-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -13,7 +17,7 @@ export default function Shop() {
             🏪 상점 정보
           </div>
           <h1 className="text-3xl font-extrabold text-green-900 leading-tight">
-            그린 밸리 과일가게
+            후기성도 직거래 장터
           </h1>
           <p className="text-green-600 text-sm mt-1">
             신선한 과일을 산지에서 직접 선별해 드립니다
@@ -47,7 +51,11 @@ export default function Shop() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onInquiry={setSelected}
+                />
               ))}
             </div>
           )}
@@ -59,11 +67,11 @@ export default function Shop() {
           <div>
             <h3 className="font-bold text-orange-700 mb-1">원하는 상품이 없으신가요?</h3>
             <p className="text-sm text-orange-600/80">
-              전화 또는 인스타그램으로 문의하시면 맞춤 주문도 가능합니다.
+              전화로 문의하시면 맞춤 주문도 가능합니다.
             </p>
           </div>
           <a
-            href="tel:010-1234-5678"
+            href={`tel:${shopInfo.phone}`}
             className="ml-auto flex-shrink-0 px-5 py-2.5 bg-orange-400 hover:bg-orange-500 text-white text-sm font-semibold rounded-full shadow transition-all duration-200 hover:-translate-y-0.5"
           >
             📞 전화 문의
@@ -71,6 +79,14 @@ export default function Shop() {
         </div>
 
       </div>
+
+      {/* 구매 문의 모달 */}
+      {selected && (
+        <PurchaseModal
+          product={selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
     </div>
   )
 }

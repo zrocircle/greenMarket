@@ -7,6 +7,12 @@ import imgGiftSet2     from '../assets/pictures/분할2.png'
 
 // 사용 가능한 나머지 이미지: 분할3.png ~ 분할10.png
 
+export const bankInfo = {
+  bank: '농협은행',
+  accountNumber: '000-0000-0000-00', // ← 실제 계좌번호로 변경해주세요
+  accountHolder: '문미경',
+}
+
 export const shopInfo = {
   name: '에녹의정원',
   owner: '문미경',
