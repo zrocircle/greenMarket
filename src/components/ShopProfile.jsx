@@ -3,8 +3,8 @@ import { shopInfo } from '../data/shopData'
 export default function ShopProfile() {
   return (
     <div className="card overflow-hidden">
-      {/* 카드 상단 배너 */}
-      <div className="h-24 bg-gradient-to-r from-green-600 via-green-500 to-emerald-400 relative">
+      {/* 카드 상단 배너 — 아바타 & 상점명 포함 */}
+      <div className="h-28 bg-gradient-to-r from-green-600 via-green-500 to-emerald-400 relative">
         <div className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: 'radial-gradient(circle at 30% 50%, white 1px, transparent 1px), radial-gradient(circle at 70% 30%, white 1px, transparent 1px)',
@@ -15,21 +15,21 @@ export default function ShopProfile() {
         <div className="absolute top-3 right-4 bg-orange-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
           {shopInfo.badge}
         </div>
-      </div>
-
-      <div className="px-6 pb-6">
-        {/* 아바타 & 상점명 */}
-        <div className="flex items-end gap-4 -mt-8 mb-4">
-          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg border-4 border-white flex items-center justify-center text-3xl flex-shrink-0">
+        {/* 아바타 & 상점명 — 배너 내부 하단 배치 */}
+        <div className="absolute bottom-4 left-6 flex items-center gap-4">
+          <div className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-3xl flex-shrink-0">
             🍏
           </div>
-          <div className="pb-1">
-            <h2 className="text-xl font-extrabold text-green-800 leading-tight">
+          <div>
+            <h2 className="text-lg font-extrabold text-white drop-shadow leading-tight">
               {shopInfo.name}
             </h2>
-            <p className="text-sm text-green-600 font-medium">대표 · {shopInfo.owner}</p>
+            <p className="text-sm text-green-100 font-medium">대표 · {shopInfo.owner}</p>
           </div>
         </div>
+      </div>
+
+      <div className="px-6 pb-6 pt-5">
 
         {/* 소개글 */}
         <p className="text-sm text-green-900/80 leading-relaxed bg-green-50 rounded-xl px-4 py-3 border border-green-100 mb-5">
