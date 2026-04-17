@@ -18,7 +18,7 @@ export default function ShopProfile() {
         {/* 아바타 & 상점명 — 배너 내부 하단 배치 */}
         <div className="absolute bottom-4 left-6 flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-3xl flex-shrink-0">
-            🍏
+            🌿
           </div>
           <div>
             <h2 className="text-lg font-extrabold text-white drop-shadow leading-tight">
@@ -51,10 +51,10 @@ export default function ShopProfile() {
             href={`mailto:${shopInfo.email}`}
           />
           <ContactItem
-            icon="📸"
-            label="인스타그램"
-            value={shopInfo.instagram}
-            href={shopInfo.instagramUrl}
+            icon="🌐"
+            label="쇼핑몰"
+            value={shopInfo.website}
+            href={shopInfo.websiteUrl}
             external
           />
         </div>

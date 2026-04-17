@@ -1,7 +1,7 @@
 export default function ProductCard({ product }) {
   const { name, description, price, unit, tag, tagColor, emoji, imageUrl } = product
 
-  const formatted = price.toLocaleString('ko-KR')
+  const formatted = price != null ? price.toLocaleString('ko-KR') : null
 
   return (
     <div className="card flex flex-col overflow-hidden group">
@@ -51,10 +51,14 @@ export default function ProductCard({ product }) {
         <div className="flex items-end justify-between mt-auto">
           <div>
             <p className="text-[11px] text-green-500 font-medium mb-0.5">{unit}</p>
-            <p className="text-2xl font-extrabold text-orange-500">
-              {formatted}
-              <span className="text-base font-semibold">원</span>
-            </p>
+            {formatted != null ? (
+              <p className="text-2xl font-extrabold text-orange-500">
+                {formatted}
+                <span className="text-base font-semibold">원</span>
+              </p>
+            ) : (
+              <p className="text-lg font-extrabold text-green-600">가격 문의</p>
+            )}
           </div>
 
           {/* 문의 버튼 */}
